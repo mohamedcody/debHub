@@ -1,101 +1,81 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="ltr">
     
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>DevHub - Dashboard</title>
+    <title>DevHub - Dashboard</title>
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
 
-    
-
-   
-   <!-- الحاوية الرئيسية اللي هتلم الصفحة كلها -->
+    <!-- الحاوية الرئيسية اللي هتلم الصفحة كلها -->
     <div class="app-container">
 
-        <!-- 1. الشريط العلوي -->
-        <header class="top-navbar">
-          <div class ="logo">
-              <h1>DevHub 🚀</h1>
-          </div>
+        <!-- القائمة الجانبية (بقت هي أول حاجة على الشمال) -->
+        <aside class="sidebar">
+            <div class ="logo">
+                <h1>DevHub 🚀</h1>
+            </div>
 
-          <nav class ="top-nav-links">
-           <ul>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="#">Tools</a></li>
-                    <li><a href="#">Resources</a></li>
-                    <li><a href="#">Notes</a></li>
-                    <li><a href="#">Tasks</a></li>
+            <h3 class="sidebar-title">القائمة</h3>
+
+            <nav class="sidebar-nav">
+
+                <ul>
+                    <li class ="active"><a href="#"><span>📊</span> Dashboard</a></li>
+                    <li class="nav-group">
+                        <a href="#" id="tools-btn"><span>🛠️</span> Tools</a>
+                        <ul class="sub-menu" id="sub-menu">
+                            <li><a href="#">JSON Formatter</a></li>
+                            <li><a href="#">Base64</a></li>
+                            <li><a href="#">UUID Generator</a></li>
+                            <li><a href="#">Color Converter</a></li>
+                            <li><a href="#">Timestamp</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><span>📖</span> Resources</a></li>
+                    <li><a href="#"><span>📝</span> Notes</a></li>
+                    <li><a href="#"><span>✅</span> Tasks</a></li>
+                    <li><a href="#"><span>⭐</span> Favorites</a></li>
+                    <li><a href="#"><span>⚙️</span> Settings</a></li>
                 </ul>
-          </nav>
+            </nav>
+        </aside>
 
-          <div class ="them-toggle">
-                <button class="mode-btn">🌙</button>
-          </div>
-
-        </header>
-
-        <!-- حاوية بتلم الـ Sidebar والـ Main Content جنب بعض -->
-        <div class="content-wrapper">
+        <!-- حاوية بتلم الجزء اليمين كله (الشريط العلوي + المحتوى + الفوتر) -->
+        <div class="main-wrapper">
             
-            <!-- 2. القائمة الجانبية -->
-            <aside class="sidebar">
-               
-                <!-- عنوان القائمة -->
-                <h3 class="sidebar-title">القائمة</h3>
+            <!-- الشريط العلوي -->
+            <header class="top-navbar">
+               <div class="search-bar">
+                    <span>🔍</span>
+                    <input type="text" placeholder="Search tools, notes...">
+                </div>
+                
+                <div class="nav-actions">
+                    <button class="icon-btn">🔔</button>
+                    <button class="icon-btn">❓</button>
+                    <button class="icon-btn">🌙</button>
+                    <button class="profile-btn">JD</button>
+                </div>
+            </header>
 
-
-                <nav class="sidebar-nav">
-
-                    <ul>
-
-                        <li class ="active">
-                            <a href="#">
-                              <span>📊</span> Dashboard
-                            </a>
-                        </li>
-
-
-                        <li class="nav-group">
-                            <a href="#">
-                                <span>🛠️</span> Tools
-                            </a>
-
-                            <ul class="sub-menu">
-                                <li><a href="#">JSON Formatter</a></li>
-                                <li><a href="#">Base64</a></li>
-                                <li><a href="#">UUID Generator</a></li>
-                                <li><a href="#">Color Converter</a></li>
-                                <li><a href="#">Timestamp</a></li>
-                            </ul>
-
-                        </li>
-                          
-
-                        <!-- باقي اللينكات الأساسية -->
-                        <li><a href="#"><span>📖</span> Resources</a></li>
-                        <li><a href="#"><span>📝</span> Notes</a></li>
-                        <li><a href="#"><span>✅</span> Tasks</a></li>
-                        <li><a href="#"><span>⭐</span> Favorites</a></li>
-                        <li><a href="#"><span>⚙️</span> Settings</a></li>
-
-                    </ul>
-
-                </nav>
-
-
-            </aside>
-
-            <!-- 3. المحتوى الأساسي -->
+            <!-- المحتوى الأساسي -->
             <main class="main-content">
                
-            <section class ="welcome-section">
-              <h2>مرحباً بك في DevHub 👋</h2>
-              <p>منصتك الشاملة لإدارة الأدوات والملاحظات والمهام</p>
-            </section>
+                <!-- قسم الترحيب الجديد -->
+                <section class="welcome-section">
+                    <div class="welcome-text">
+                        <h2>Welcome to DevHub 👋 مرحباً بك في DevHub</h2>
+                        <p>The comprehensive platform for developer tools, task management, and documentation resources.</p>
+                    </div>
+                    <div class="welcome-actions">
+                        <button class="view-btn">Quick Action</button>
+                        <button class="outline-btn">View Resources</button>
+                    </div>
+                </section>
 
-           <!-- جزء الإحصائيات -->
                 <section class="stats-grid">
                     <div class="stat-card">
                         <h3 class="stat-number blue">24</h3>
@@ -115,74 +95,34 @@
                     </div>
                 </section>
 
-
-
-                <sectino class="tools-section">
+                <!-- تم تصحيح كلمة section هنا -->
+                <section class="tools-section">
                     <div class ="section-header">
-                       <h2>أدوات المطورين</h2>
+                        <h2>أدوات المطورين</h2>
                         <p>مجموعة من الأدوات المفيدة اللي هتساعدك في الشغل اليومي</p>
                     </div>
-
-
                     <div class ="tools-grid">
-                        
-
-                       <!-- كارت أداة 1 -->
                         <div class="tool-card">
                             <h3>JSON Formatter</h3>
                             <p>تنسيق وتحقق من صحة الـ JSON</p>
                             <button class="view-btn">View Tool</button>
                         </div>
-
-                        <!-- كارت أداة 2 -->
                         <div class="tool-card">
                             <h3>Base64 Encoder</h3>
                             <p>تحويل النصوص إلى Base64</p>
                             <button class="view-btn">View Tool</button>
                         </div>
-
-                        <!-- كارت أداة 3 -->
-                        <div class="tool-card">
-                            <h3>UUID Generator</h3>
-                            <p>توليد معرفات فريدة</p>
-                            <button class="view-btn">View Tool</button>
-                        </div>
-
-                        <!-- كارت أداة 4 -->
-                        <div class="tool-card">
-                            <h3>Color Converter</h3>
-                            <p>تحويل الألوان بين صيغ مختلفة</p>
-                            <button class="view-btn">View Tool</button>
-                        </div>
-
-                        <!-- كارت أداة 5 -->
-                        <div class="tool-card">
-                            <h3>Timestamp</h3>
-                            <p>تحويل التواريخ والأوقات</p>
-                            <button class="view-btn">View Tool</button>
-                        </div>
-
                     </div>
-
-
-
-
-                </sectino>
-
+                </section>
 
             </main>
 
+            <footer class="app-footer">
+                <p>جميع الحقوق محفوظة 2024 © DevHub.</p>
+            </footer>
+
         </div>
-
-        <!-- 4. الفوتر -->
-        <footer class="app-footer">
-     <p>جميع الحقوق محفوظة 2024 © DevHub.</p>
-        </footer>
-
     </div>
-
-    
-
-
+    <script src="assets/css/main.js"></script>
 </body>
 </html>

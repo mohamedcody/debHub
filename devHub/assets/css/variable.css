@@ -1,0 +1,43 @@
+:root{
+    /* الألوان الأساسية للثيم الدارك (Dark Mode) */
+    --bg-main: #111c36;      /* لون الخلفية الأساسي الغامق جداً */
+    --bg-sidebar: #111827;   /* لون القائمة الجانبية والكروت */
+    --bg-card: #1F2937;      /* لون الكروت الداخلية */
+    
+    /* ألوان مميزة (Primary & Accent) */
+    --primary-color: #F43F5E; /* اللون البينك/الأحمر بتاع الزراير واللوجو */
+    --primary-hover: #E11D48; /* لون الزرار لما تقف عليه بالماوس */
+    
+    /* ألوان النصوص */
+    --text-primary: #F3F4F6; /* لون الخط الأساسي (أبيض) */
+    --text-secondary: #9CA3AF; /* لون الخط الثانوي (رمادي فاتح) */
+    
+    /* ألوان الإحصائيات (Semantic Colors) */
+    --color-blue: #3B82F6;
+    --color-pink: #EC4899;
+    --color-green: #10B981;
+    --color-yellow: #F59E0B;
+    
+    /* المسافات والحدود والتأثيرات */
+    --border-color: #374151; /* لون الخطوط الفاصلة */
+    --border-radius: 12px;   /* دوران حواف الكروت */
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    
+    /* الخطوط */
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+}
+
+body{
+    font-family: var(--font-family);
+    background-color: var(--bg-main);
+    color:var(--text-primary);
+}

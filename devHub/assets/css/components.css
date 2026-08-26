@@ -1,0 +1,108 @@
+
+
+
+
+
+
+
+
+ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+a{
+    text-decoration:none;
+    color:var(--text-primary);
+}
+
+.top-nav-links ul{
+    display:flex;
+    gap: var(--spacing-md);
+}
+
+.top-nav-links a {
+    color:var(--text-primary);
+    font-weight: 500 ;
+    transition: color 0.3s ease;
+   
+}
+
+.top-nav-links a:hover{
+    color:var(--primary-color);
+}
+
+
+/* =========================================
+   3. القائمة الجانبية (Sidebar)
+   ========================================= */
+/* بنرص لينكات الـ Sidebar تحت بعض بمسافات متساوية */
+
+.sidebar-links ul{
+    display:flex;
+    flex-direction:column;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.sidebar-nav a{
+    display:flex;
+    align-items:center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    color:var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav li.active a{
+    background-color: var(--bg-card);
+    color:var(--primary-color);
+}
+.sub-menu{
+    padding-left : 30px;
+    margin-top: 5px;
+    display:none;
+}
+
+.sub-menu.show{
+    display:block;
+}
+
+.search-bar{
+    display:flex;
+    align-items:center;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 8px 16px;
+    width: 300px;
+}
+
+.search-bar input{
+    background:none;
+    border:none;
+    color:var(--text-primary);
+    outline:none;
+    margin-left: 8px;
+    width: 100%;
+}
+
+.search-bar input::placeholder{
+    color:var(--text-secondary);
+}
+
+.nav-actions{
+    display:flex;
+    align-items:center; 
+    gap: var(--spacing-md);
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
