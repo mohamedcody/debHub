@@ -7,24 +7,33 @@
 
 
 ul{
+    /* list-style: none بتشيل النقط اللي بتظهر جنب عناصر القائمة تلقائيا */
     list-style:none;
+    /* padding هي المسافة من جوه العنصر؛ هنا بنلغي المسافة الافتراضية للقائمة */
     padding:0;
+    /* margin هي المسافة من بره العنصر؛ هنا بنلغي المسافة الافتراضية للقائمة */
     margin:0;
 }
 
 a{
+    /* بيشيل الخط اللي بيظهر تحت اللينك */
     text-decoration:none;
+    /* بيخلي لون اللينك ياخد لون النص الأساسي من المتغير */
     color:var(--text-primary);
 }
 
 .top-nav-links ul{
+    /* بيحط العناصر جنب بعض بدل ما كل عنصر ينزل سطر */
     display:flex;
+    /* مسافة ثابتة بين عناصر الـ flex من غير ما نضيف margin لكل عنصر */
     gap: var(--spacing-md);
 }
 
 .top-nav-links a {
     color:var(--text-primary);
+    /* بيتحكم في تخانة الخط؛ 500 تخانة متوسطة */
     font-weight: 500 ;
+    /* بيخلي تغيير اللون عند الـ hover ناعم بدل ما يحصل فجأة */
     transition: color 0.3s ease;
    
 }
@@ -40,18 +49,26 @@ a{
 /* بنرص لينكات الـ Sidebar تحت بعض بمسافات متساوية */
 
 .sidebar-links ul{
+    /* بيشغل Flexbox لترتيب اللينكات */
     display:flex;
+    /* بيخلي اتجاه العناصر رأسي: عنصر تحت عنصر */
     flex-direction:column;
+    /* مسافة بين اللينكات */
     gap: var(--spacing-md);
+    /* مسافة من بره القائمة ناحية فوق */
     margin-top: var(--spacing-lg);
 }
 
 .sidebar-nav a{
+    /* بنستخدم flex علشان نرتب الأيقونة والنص بسهولة */
     display:flex;
+    /* بيوسط الأيقونة والنص رأسيًا */
     align-items:center;
     gap: var(--spacing-md);
+    /* مسافة داخلية: أول رقم فوق وتحت، والتاني يمين وشمال */
     padding: var(--spacing-sm) var(--spacing-md);
     color:var(--text-primary);
+    /* انتقال ناعم لتغيير اللون عند مرور الماوس */
     transition: color 0.3s ease;
 }
 
@@ -61,49 +78,76 @@ a{
     color:var(--primary-color);
 }
 .sub-menu{
+    /* بيزق القائمة الفرعية لجوه ناحية اليمين */
     padding-left : 30px;
+    /* مسافة خارجية فوق القائمة الفرعية */
     margin-top: 5px;
-    display:none;
+    /* max-height بصفر بيقفل القائمة، ونقدر نحرّكه عكس display: none */
+    max-height: 0;
+    /* opacity بتخلي ظهور القائمة تدريجيًا من شفاف لواضح */
+    opacity: 0;
+    /* بيطلع القائمة سنة صغيرة أثناء ظهورها */
+    transform: translateY(-40px);
+    /* visibility تمنع الضغط على اللينكات وهي مقفولة */
+    visibility: hidden;
+    /* overflow بيخفي المحتوى الخارج أثناء حركة الارتفاع */
+    overflow: hidden;
+    /* بنحرّك الخصائص دي مع بعض في 0.35 ثانية */
+    transition: max-height 0.50s ease, opacity 0.20s ease, transform 0.35s ease, visibility 0.35s;
 }
 
 .sub-menu.show{
-    display:block;
+    /* ارتفاع كبير كفاية لعرض كل عناصر القائمة */
+    max-height: 300px;
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
 }
 
-.search-bar{
-    display:flex;
-    align-items:center;
+/* اللي مش محتاج حركة يفضل يشوف النتيجة فورًا */
+@media (prefers-reduced-motion: reduce){
+    .sub-menu{
+        transition: none;
+    }
+}
+
+/* تعديل على شريط البحث اللي إنت كاتبه */
+.search-bar {
+    display: flex;
+    align-items: center;
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
-    padding: 8px 16px;
-    width: 300px;
+    padding: 10px 20px; /* كبرنا المسافة شوية هنا */
+    width: 350px; /* عرضناه سنة عشان يبقى أشيك */
 }
 
-.search-bar input{
-    background:none;
-    border:none;
-    color:var(--text-primary);
-    outline:none;
-    margin-left: 8px;
+.search-bar input {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    outline: none;
+    margin-left: 12px; /* كبرنا المسافة بين الأيقونة والكلام */
     width: 100%;
-}
-ت
-.search-bar input::placeholder{
-    color:var(--text-secondary);
 }
 
 .nav-actions{
+    /* بيرتب أزرار الـ nav جنب بعض */
     display:flex;
     align-items:center; 
+    /* مسافة بين الأزرار */
     gap: var(--spacing-md);
 }
 
 .icon-btn {
+    /* none هنا بيلغي خلفية الزر */
     background: none;
+    /* none هنا بيلغي إطار الزر */
     border: none;
     color: var(--text-secondary);
+    /* rem وحدة نسبية لحجم الخط الأساسي */
     font-size: 1.2rem;
+    /* شكل الماوس يبقى يد علشان يوضح إن الزر قابل للضغط */
     cursor: pointer;
 }
 
@@ -111,17 +155,21 @@ a{
     background-color: var(--primary-color);
     color: white;
     border:none;
+    /* 50% يخلي الزر دائرة لو العرض والارتفاع متساويين */
     border-radius: 50%;
 }
 
 .view-btn{
     background-color: var(--primary-color);
     color: white;   
-    border-radius: 8px;
-    padding: 8px 20px;
+    /* تدوير زوايا الزر؛ المتغير بيخلي نفس القيمة موحدة في المشروع */
     border-radius: var(--border-radius);
+    /* مساحة داخلية للزر: 8 فوق/تحت و20 يمين/شمال */
+    padding: 8px 20px;
     cursor: pointer;
+    /* bold بيخلي كلام الزر أوضح */
     font-weight: bold;
+    /* بينعم تغيير لون الخلفية */
     transition: background-color 0.3s ease;
 }
 .view-btn:hover{
@@ -129,12 +177,28 @@ a{
 }
 
 .outline-btn{
+    /* transparent معناها الخلفية شفافة */
     background-color: transparent;
     color: var(--primary-color);
+    /* زر بإطار ملون وخلفية شفافة */
     border: 1px solid var(--primary-color);
     border-radius: var(--border-radius);
     padding: 8px 20px;
     cursor: pointer;
     font-weight: bold;
+    /* بينعم تغيير الخلفية واللون معًا */
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.outline-btn:hover{
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.app-footer{
+    background-color: var(--bg-card);
+    text-align: center;
+    padding: var(--spacing-lg);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
 }
