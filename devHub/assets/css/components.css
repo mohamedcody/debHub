@@ -201,4 +201,5 @@ a{
     padding: var(--spacing-lg);
     color: var(--text-secondary);
     font-size: 0.9rem;
+    margin-top: 100px;
 }

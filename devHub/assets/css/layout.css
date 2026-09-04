@@ -5,6 +5,8 @@
   min-height: 100vh;
   background: #0d1b2a;
   color: white;
+  padding: var(--spacing-sm);
+  margin: var(--spacing-md);
 }
 
 
