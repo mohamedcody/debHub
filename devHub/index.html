@@ -50,14 +50,14 @@
             <header class="top-navbar">
                <div class="search-bar">
                     <span>🔍</span>
-                    <input type="text" placeholder="Search tools, notes...">
+                    <input type="search" aria-label="Search tools and notes" placeholder="Search tools, notes...">
                 </div>
                 
                 <div class="nav-actions">
-                   <button class="icon-btn" aria-label="Notifications">🔔</button>
-                    <button class="icon-btn" aria-label="Help">❓</button>
-                    <button class="icon-btn" aria-label="Dark Mode">🌙</button>
-                    <button class="profile-btn" aria-label="Profile">👤</button>
+                    <button type="button" class="icon-btn" aria-label="Notifications">🔔</button>
+                    <button type="button" class="icon-btn" aria-label="Help">❓</button>
+                    <button type="button" class="icon-btn" aria-label="Dark Mode">🌙</button>
+                    <button type="button" class="profile-btn" aria-label="Profile">👤</button>
                 </div>
             </header>
 
@@ -71,8 +71,8 @@
                         <p>The comprehensive platform for developer tools, task management, and documentation resources.</p>
                     </div>
                     <div class="welcome-actions">
-                        <button class="view-btn">Quick Action</button>
-                        <button class="outline-btn">View Resources</button>
+                        <button type="button" class="view-btn">Quick Action</button>
+                        <button type="button" class="outline-btn">View Resources</button>
                     </div>
                 </section>
 
@@ -105,32 +105,32 @@
                         <div class="tool-card">
                             <h3>JSON Formatter</h3>
                               <p>تنسيق وتحقق من صحة الـ JSON</p>
-                            <button class="view-btn">View Tool</button>
+                            <button type="button" class="view-btn">View Tool</button>
                         </div>
                         <div class="tool-card">
                             <h3>Base64 Encoder</h3>
                             <p>تحويل النصوص إلى Base64</p>
-                            <button class="view-btn">View Tool</button>
+                            <button type="button" class="view-btn">View Tool</button>
                         </div>
                         <div class="tool-card">
                             <h3>UUID Generator</h3>
                             <p>إنشاء UUIDs فريدة</p>
-                            <button class="view-btn">View Tool</button>
+                            <button type="button" class="view-btn">View Tool</button>
                         </div>
                         <div class="tool-card">
                             <h3>QR Code Generator</h3>
                             <p>إنشاء رموز QR</p>
-                            <button class="view-btn">View Tool</button>
+                            <button type="button" class="view-btn">View Tool</button>
                         </div>
                         <div class="tool-card">
                            <h3>Timestamp</h3>
                         <p>تحويل الوقت بين Unix ووقت مقروء</p>
-                            <button class="view-btn">View Tool</button>
+                            <button type="button" class="view-btn">View Tool</button>
                         </div>
                         <div class="tool-card">
                             <h3>JWT Debugger</h3>
                             <p>فحص وتصحيح JWTs</p>
-                            <button class="view-btn">View Tool</button>
+                            <button type="button" class="view-btn">View Tool</button>
                         </div>
                     </div>
                 </section>
@@ -143,6 +143,6 @@
 
         </div>
     </div>
-    <script src="assets/css/main.js"></script>
+    <script src="assets/css/main.js" defer></script>
 </body>
 </html>
