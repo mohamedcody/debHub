@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family: 'Inter' , sans-serif;
+
+}
+
+body{
+    background-color: #0d1117;
+    color:#c9d1d9;
+}
+
+.split-layout{
+    display:flex;
+   min-height:100vh;
+}
+
+.left-side{
+    width:50%;
+   background: linear-gradient(rgba(13, 17, 23, 0.8), rgba(13, 17, 23, 0.9)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1000&q=80') center/cover;
+   padding:3rem;
+   display:flex;
+   flex-direction:column;
+   justify-content: space-between;
+  border-right: 1px solid #30363d;
+   
+}
+
+.logo{
+    color:#ffff;
+    font-size:2rem;
+    margin-bottom:0.5rem;
+
+}

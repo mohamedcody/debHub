@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevHub Login</title>
+    <link rel="stylesheet" href="../assets/css/auth.css">
+    <!-- ضيف مكتبة الأيقونات دي عشان تظهر الأيقونات معاك -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="split-layout">
+    <!-- النص الشمال -->
+    <div class="left-side">
+        <div class="logo">
+            <i class="fa-solid fa-code"></i> DevHub
+        </div>
+        
+        <div class="hero-content">
+            <h1>Welcome Back</h1>
+            <p class="subtitle">Access your developer toolkit and cloud sync.</p>
+            
+            <div class="features">
+                <div class="feature-item">
+                    <i class="fa-solid fa-globe feature-icon"></i>
+                    <div>
+                        <h3>Universal Sync</h3>
+                        <p>Access your snippets and tasks from any machine instantly.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-shield-halved feature-icon"></i>
+                    <div>
+                        <h3>Security First</h3>
+                        <p>Military-grade encryption for all your stored environment variables.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-terminal feature-icon"></i>
+                    <div>
+                        <h3>Dev-First UX</h3>
+                        <p>Keyboard shortcuts and CLI integration for power users.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <span>© 2024 DevHub Pro • Integrated Workspace</span>
+            <div class="footer-nav">
+                <span>Status</span>
+                <span>Security</span>
+                <span>API</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- النص اليمين -->
+    <div class="right-side">
+        <div class="lang-selector">
+            العربية <i class="fa-solid fa-globe"></i>
+        </div>
+
+        <div class="login-container">
+            <h2>Welcome Back</h2>
+            <p class="login-subtitle">Access your developer toolkit and cloud sync.</p>
+
+            <div class="social-login">
+                <button><i class="fa-brands fa-github"></i> GitHub</button>
+                <button><i class="fa-brands fa-google"></i> Google</button>
+            </div>
+
+            <div class="divider">
+                <span>OR USE EMAIL</span>
+            </div>
+
+            <form>
+                <div class="input-group">
+                    <label>Work Email</label>
+                    <div class="input-wrapper">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" placeholder="name@company.com">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="label-row">
+                        <label>Password</label>
+                        <a href="#" class="forgot-link">Forgot Access Token?</a>
+                    </div>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="••••••••">
+                        <i class="fa-regular fa-eye eye-icon"></i>
+                    </div>
+                </div>
+
+                <button type="submit" class="primary-btn">Authenticate Account &rarr;</button>
+            </form>
+
+            <p class="signup-link">New to DevHub? <a href="#">Create Account</a></p>
+
+            <div class="security-badge">
+                <i class="fa-solid fa-code"></i>
+                <span>AES-256 ENCRYPTION ENABLED BY DEFAULT FOR ALL SESSION HANDSHAKES.</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
