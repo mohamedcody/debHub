@@ -22,33 +22,12 @@ a{
     color:var(--text-primary);
 }
 
-.top-nav-links ul{
-    /* بيحط العناصر جنب بعض بدل ما كل عنصر ينزل سطر */
-    display:flex;
-    /* مسافة ثابتة بين عناصر الـ flex من غير ما نضيف margin لكل عنصر */
-    gap: var(--spacing-md);
-}
-
-.top-nav-links a {
-    color:var(--text-primary);
-    /* بيتحكم في تخانة الخط؛ 500 تخانة متوسطة */
-    font-weight: 500 ;
-    /* بيخلي تغيير اللون عند الـ hover ناعم بدل ما يحصل فجأة */
-    transition: color 0.3s ease;
-   
-}
-
-.top-nav-links a:hover{
-    color:var(--primary-color);
-}
-
-
 /* =========================================
    3. القائمة الجانبية (Sidebar)
    ========================================= */
 /* بنرص لينكات الـ Sidebar تحت بعض بمسافات متساوية */
 
-.sidebar-links ul{
+.sidebar-nav > ul{
     /* بيشغل Flexbox لترتيب اللينكات */
     display:flex;
     /* بيخلي اتجاه العناصر رأسي: عنصر تحت عنصر */
@@ -59,7 +38,8 @@ a{
     margin-top: var(--spacing-lg);
 }
 
-.sidebar-nav a{
+.sidebar-nav a,
+.sidebar-nav button{
     /* بنستخدم flex علشان نرتب الأيقونة والنص بسهولة */
     display:flex;
     /* بيوسط الأيقونة والنص رأسيًا */
@@ -72,7 +52,16 @@ a{
     transition: color 0.3s ease;
 }
 
+.sidebar-nav button {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    font: inherit;
+    text-align: left;
+}
+
 .sidebar-nav a:hover,
+.sidebar-nav button:hover,
 .sidebar-nav li.active a{
     background-color: var(--bg-card);
     color:var(--primary-color);
@@ -202,6 +191,27 @@ a{
     color: var(--text-secondary);
     font-size: 0.9rem;
     margin-top: 100px;
+}
+
+.stat-number {
+    margin-bottom: var(--spacing-sm);
+    font-size: 2rem;
+}
+
+.stat-number.blue {
+    color: var(--color-blue);
+}
+
+.stat-number.pink {
+    color: var(--color-pink);
+}
+
+.stat-number.green {
+    color: var(--color-green);
+}
+
+.stat-number.yellow {
+    color: var(--color-yellow);
 }
 
 

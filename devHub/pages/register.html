@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create your DevHub developer workspace.">
+    <title>DevHub Create Account</title>
+    <link rel="stylesheet" href="../assets/css/auth.css?v=2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="split-layout">
+    <div class="left-side">
+        <div class="logo">
+            <i class="fa-solid fa-code" aria-hidden="true"></i> DevHub
+        </div>
+
+        <div class="hero-content">
+            <h1>Build Your Workspace</h1>
+            <p class="subtitle">Create one secure home for your developer tools, snippets, and tasks.</p>
+
+            <div class="features">
+                <div class="feature-item">
+                    <i class="fa-solid fa-layer-group feature-icon" aria-hidden="true"></i>
+                    <div>
+                        <h3>One Developer Workspace</h3>
+                        <p>Keep your daily tools and project notes organized in one place.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-shield-halved feature-icon" aria-hidden="true"></i>
+                    <div>
+                        <h3>Security First</h3>
+                        <p>Start with secure defaults for your developer workspace.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-rocket feature-icon" aria-hidden="true"></i>
+                    <div>
+                        <h3>Ready to Move Faster</h3>
+                        <p>Save time by keeping your most useful workflows close.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <span>© 2024 DevHub Pro • Integrated Workspace</span>
+            <div class="footer-nav">
+                <span>Status</span>
+                <span>Security</span>
+                <span>API</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="right-side">
+        <div class="lang-selector">
+            العربية <i class="fa-solid fa-globe" aria-hidden="true"></i>
+        </div>
+
+        <div class="login-container auth-container">
+            <section class="auth-panel register-panel" aria-labelledby="register-title">
+                <h2 id="register-title" tabindex="-1">Create Account</h2>
+                <p class="login-subtitle">Build your developer workspace in a few seconds.</p>
+
+                <form novalidate>
+                    <div class="input-group">
+                        <label for="register-name">Full Name</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-user" aria-hidden="true"></i>
+                            <input id="register-name" name="name" type="text" placeholder="Alex Morgan" autocomplete="name" minlength="2" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="register-email">Work Email</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                            <input id="register-email" name="email" type="email" placeholder="name@company.com" autocomplete="email" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="register-password">Password</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                            <input id="register-password" name="password" type="password" placeholder="Create a secure password" autocomplete="new-password" minlength="8" required>
+                            <button type="button" class="password-toggle" aria-label="Show password" aria-pressed="false">
+                                <i class="fa-regular fa-eye" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="primary-btn">Create Account &rarr;</button>
+                </form>
+
+                <p class="form-status" role="status" aria-live="polite"></p>
+                <p class="signup-link">Already have an account? <a href="login.html" class="auth-switch">Back to Login</a></p>
+
+                <div class="security-badge">
+                    <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                    <span>YOUR WORKSPACE IS PROTECTED WITH SECURE SESSION HANDSHAKES.</span>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<script src="../assets/js/auth.js" defer></script>
+</body>
+</html>

@@ -165,33 +165,6 @@ button {
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
 }
 
-.auth-panel {
-  grid-area: 1 / 1;
-  width: 100%;
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-}
-
-.register-panel {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(1.5rem) scale(0.98);
-  visibility: hidden;
-}
-
-.split-layout.is-register .login-panel {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(-1.5rem) scale(0.98);
-  visibility: hidden;
-}
-
-.split-layout.is-register .register-panel {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(0) scale(1);
-  visibility: visible;
-}
-
 .login-container h2 {
   margin-bottom: 0.6rem;
   color: var(--auth-text);
@@ -304,8 +277,20 @@ button {
   color: #64708b;
 }
 
-.eye-icon {
-  cursor: pointer;
+.password-toggle {
+  display: grid;
+  flex: 0 0 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  place-items: center;
+  padding: 0;
+  color: var(--auth-muted);
+  border: 0;
+  background: transparent;
+}
+
+.password-toggle:hover {
+  color: var(--auth-text);
 }
 
 .primary-btn {
@@ -323,6 +308,22 @@ button {
 .primary-btn:hover {
   background: var(--auth-accent-hover);
   transform: translateY(-1px);
+}
+
+.form-status {
+  min-height: 1.25rem;
+  margin-top: 0.75rem;
+  color: var(--auth-muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.form-status.is-error {
+  color: #ff879f;
+}
+
+.form-status.is-success {
+  color: #66d9a4;
 }
 
 .auth-switch {
@@ -343,6 +344,7 @@ button {
 .forgot-link:focus-visible,
 .primary-btn:focus-visible,
 .social-login button:focus-visible,
+.password-toggle:focus-visible,
 .input-wrapper input:focus-visible {
   outline: 3px solid rgba(255, 61, 104, 0.35);
   outline-offset: 3px;

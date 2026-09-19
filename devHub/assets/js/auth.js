@@ -1,33 +1,54 @@
-const splitLayout = document.querySelector('.split-layout');
-const authPanels = {
-    login: document.querySelector('.login-panel'),
-    register: document.querySelector('.register-panel')
-};
-const switchButtons = document.querySelectorAll('.auth-switch');
-const forms = document.querySelectorAll('.auth-panel form');
+const forms = document.querySelectorAll('form');
+const passwordToggles = document.querySelectorAll('.password-toggle');
+const forgotLink = document.querySelector('.forgot-link');
+const socialButtons = document.querySelectorAll('.social-login button');
 
-function setAuthMode(isRegister) {
-    splitLayout.classList.toggle('is-register', isRegister);
-    authPanels.login.setAttribute('aria-hidden', String(isRegister));
-    authPanels.register.setAttribute('aria-hidden', String(!isRegister));
-    authPanels.login.toggleAttribute('inert', isRegister);
-    authPanels.register.toggleAttribute('inert', !isRegister);
+function showStatus(form, message, type = '') {
+    const status = form.parentElement.querySelector('.form-status');
 
-    const activePanel = isRegister ? authPanels.register : authPanels.login;
-    const firstControl = activePanel.querySelector('input, button');
-    setTimeout(() => firstControl.focus({ preventScroll: true }), 350);
+    status.textContent = message;
+    status.className = `form-status${type ? ` is-${type}` : ''}`;
 }
-
-switchButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-        setAuthMode(button.closest('.register-panel') === null);
-    });
-});
 
 forms.forEach((form) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
+
+        const invalidControl = [...form.elements].find((control) => !control.checkValidity());
+
+        if (invalidControl) {
+            showStatus(form, invalidControl.validationMessage, 'error');
+            invalidControl.focus();
+            return;
+        }
+
+        showStatus(form, 'The form is valid. Connect your API to continue.', 'success');
     });
 });
 
-setAuthMode(false);
+passwordToggles.forEach((toggle) => {
+    toggle.addEventListener('click', () => {
+        const input = toggle.parentElement.querySelector('input');
+        const icon = toggle.querySelector('i');
+        const isVisible = input.type === 'text';
+
+        input.type = isVisible ? 'password' : 'text';
+        toggle.setAttribute('aria-label', isVisible ? 'Show password' : 'Hide password');
+        toggle.setAttribute('aria-pressed', String(!isVisible));
+        icon.classList.toggle('fa-eye', isVisible);
+        icon.classList.toggle('fa-eye-slash', !isVisible);
+    });
+});
+
+if (forgotLink) {
+    forgotLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        showStatus(forgotLink.closest('.auth-panel').querySelector('form'), 'Password recovery will be connected when the API is available.');
+    });
+}
+
+socialButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        showStatus(button.closest('.auth-panel').querySelector('form'), 'Social login is not connected yet.');
+    });
+});

@@ -5,13 +5,12 @@
   min-height: 100vh;
   background: #0d1b2a;
   color: white;
-  padding: var(--spacing-sm);
-  margin: var(--spacing-md);
 }
 
 
 .sidebar{
-   width: 240px;
+  width: 240px;
+  flex-shrink: 0;
   background : var(--bg-sidebar);
 }
 
@@ -32,6 +31,11 @@
      border-bottom: 1px solid var(--border-color);
 }
 
+.main-content {
+  flex: 1;
+  padding: var(--spacing-lg);
+}
+
 .welcome-section {
   display: flex;
   justify-content: space-between;
@@ -41,7 +45,7 @@
   border-radius: 16px;
   background: #101d2d;
   border: 1px solid var(--border-color);
-  margin: var(--spacing-lg);
+  margin: 0;
   box-shadow: 0 12px 30px rgba(0,0,0,0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -65,7 +69,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--spacing-lg);
-    padding: var(--spacing-lg);
+    padding: var(--spacing-lg) 0;
 }
 
 .stat-card {
@@ -96,11 +100,13 @@
 
 .tools-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
 
 .tool-card {
+  display: flex;
+  min-width: 0;
   background: var(--bg-card);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 16px;
@@ -135,6 +141,83 @@
   border-radius: 10px;
   padding: 12px 16px;
   cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .top-navbar {
+    gap: var(--spacing-md);
+  }
+
+  .search-bar {
+    width: min(100%, 350px);
+  }
+}
+
+@media (max-width: 700px) {
+  .app-container {
+    display: block;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: var(--spacing-md);
+  }
+
+  .sidebar-nav > ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+  }
+
+  .sidebar-nav a {
+    padding: var(--spacing-sm);
+  }
+
+  .sub-menu {
+    grid-column: 1 / -1;
+  }
+
+  .top-navbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .nav-actions {
+    justify-content: flex-end;
+  }
+
+  .main-content {
+    padding: var(--spacing-md);
+  }
+
+  .welcome-section {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .welcome-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+
+  .tools-section {
+    margin-top: var(--spacing-lg);
+  }
+
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
 }
 
 
