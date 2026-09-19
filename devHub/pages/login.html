@@ -62,52 +62,96 @@
             العربية <i class="fa-solid fa-globe"></i>
         </div>
 
-        <div class="login-container">
-            <h2>Welcome Back</h2>
-            <p class="login-subtitle">Access your developer toolkit and cloud sync.</p>
+        <div class="login-container auth-container">
+            <section class="auth-panel login-panel" aria-labelledby="login-title">
+                <h2 id="login-title" tabindex="-1">Welcome Back</h2>
+                <p class="login-subtitle">Access your developer toolkit and cloud sync.</p>
 
-            <div class="social-login">
-                <button><i class="fa-brands fa-github"></i> GitHub</button>
-                <button><i class="fa-brands fa-google"></i> Google</button>
-            </div>
-
-            <div class="divider">
-                <span>OR USE EMAIL</span>
-            </div>
-
-            <form>
-                <div class="input-group">
-                    <label>Work Email</label>
-                    <div class="input-wrapper">
-                        <i class="fa-regular fa-envelope"></i>
-                        <input type="email" placeholder="name@company.com">
-                    </div>
+                <div class="social-login">
+                    <button type="button"><i class="fa-brands fa-github"></i> GitHub</button>
+                    <button type="button"><i class="fa-brands fa-google"></i> Google</button>
                 </div>
 
-                <div class="input-group">
-                    <div class="label-row">
-                        <label>Password</label>
-                        <a href="#" class="forgot-link">Forgot Access Token?</a>
-                    </div>
-                    <div class="input-wrapper">
-                        <i class="fa-solid fa-lock"></i>
-                        <input type="password" placeholder="••••••••">
-                        <i class="fa-regular fa-eye eye-icon"></i>
-                    </div>
+                <div class="divider">
+                    <span>OR USE EMAIL</span>
                 </div>
 
-                <button type="submit" class="primary-btn">Authenticate Account &rarr;</button>
-            </form>
+                <form>
+                    <div class="input-group">
+                        <label for="login-email">Work Email</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                            <input id="login-email" type="email" placeholder="name@company.com" autocomplete="email">
+                        </div>
+                    </div>
 
-            <p class="signup-link">New to DevHub? <a href="#">Create Account</a></p>
+                    <div class="input-group">
+                        <div class="label-row">
+                            <label for="login-password">Password</label>
+                            <a href="#" class="forgot-link">Forgot Access Token?</a>
+                        </div>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                            <input id="login-password" type="password" placeholder="••••••••" autocomplete="current-password">
+                            <i class="fa-regular fa-eye eye-icon" aria-hidden="true"></i>
+                        </div>
+                    </div>
 
-            <div class="security-badge">
-                <i class="fa-solid fa-code"></i>
-                <span>AES-256 ENCRYPTION ENABLED BY DEFAULT FOR ALL SESSION HANDSHAKES.</span>
-            </div>
+                    <button type="submit" class="primary-btn">Authenticate Account &rarr;</button>
+                </form>
+
+                <p class="signup-link">New to DevHub? <button type="button" class="auth-switch">Create Account</button></p>
+
+                <div class="security-badge">
+                    <i class="fa-solid fa-code" aria-hidden="true"></i>
+                    <span>AES-256 ENCRYPTION ENABLED BY DEFAULT FOR ALL SESSION HANDSHAKES.</span>
+                </div>
+            </section>
+
+            <section class="auth-panel register-panel" aria-labelledby="register-title" aria-hidden="true" inert>
+                <h2 id="register-title" tabindex="-1">Create Account</h2>
+                <p class="login-subtitle">Build your developer workspace in a few seconds.</p>
+
+                <form>
+                    <div class="input-group">
+                        <label for="register-name">Full Name</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-user" aria-hidden="true"></i>
+                            <input id="register-name" type="text" placeholder="Alex Morgan" autocomplete="name">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="register-email">Work Email</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                            <input id="register-email" type="email" placeholder="name@company.com" autocomplete="email">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="register-password">Password</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                            <input id="register-password" type="password" placeholder="Create a secure password" autocomplete="new-password">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="primary-btn">Create Account &rarr;</button>
+                </form>
+
+                <p class="signup-link">Already have an account? <button type="button" class="auth-switch">Back to Login</button></p>
+
+                <div class="security-badge">
+                    <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                    <span>YOUR WORKSPACE IS PROTECTED WITH SECURE SESSION HANDSHAKES.</span>
+                </div>
+            </section>
         </div>
     </div>
 </div>
+
+<script src="../assets/js/auth.js" defer></script>
 
 </body>
 </html>
