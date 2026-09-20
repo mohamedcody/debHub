@@ -12,3 +12,20 @@ if (toolsBtn && toolsMenu) {
         toolsBtn.setAttribute('aria-expanded', String(isOpen));
     });
 }
+
+const searchInput = document.querySelector('.search-bar input');
+const toolCards = document.querySelectorAll('.tools-grid .tool-card');
+
+if (searchInput) {
+
+    searchInput.addEventListener('input', function () {
+
+        const searchValue = searchInput.value.toLowerCase();
+
+        toolCards.forEach(function (card) {
+            const searchDescription = card.querySelector('p').textContent.toLowerCase();
+            const toolName = card.querySelector('h3').textContent.toLowerCase();
+            card.style.display = (toolName.includes(searchValue) || searchDescription.includes(searchValue)) ? 'block' : 'none';
+        });
+        });
+}

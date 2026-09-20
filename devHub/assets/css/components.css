@@ -15,6 +15,19 @@ ul{
     margin:0;
 }
 
+.logo h1 {
+    color: var(--text-primary);
+    font-size: 1.15rem;
+}
+
+.sidebar-title {
+    margin-top: 28px;
+    color: var(--text-secondary);
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
 a{
     /* بيشيل الخط اللي بيظهر تحت اللينك */
     text-decoration:none;
@@ -33,9 +46,9 @@ a{
     /* بيخلي اتجاه العناصر رأسي: عنصر تحت عنصر */
     flex-direction:column;
     /* مسافة بين اللينكات */
-    gap: var(--spacing-md);
+    gap: 6px;
     /* مسافة من بره القائمة ناحية فوق */
-    margin-top: var(--spacing-lg);
+    margin-top: 14px;
 }
 
 .sidebar-nav a,
@@ -44,12 +57,14 @@ a{
     display:flex;
     /* بيوسط الأيقونة والنص رأسيًا */
     align-items:center;
-    gap: var(--spacing-md);
+    gap: 8px;
     /* مسافة داخلية: أول رقم فوق وتحت، والتاني يمين وشمال */
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: 7px 6px;
     color:var(--text-primary);
     /* انتقال ناعم لتغيير اللون عند مرور الماوس */
-    transition: color 0.3s ease;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .sidebar-nav button {
@@ -104,11 +119,12 @@ a{
 .search-bar {
     display: flex;
     align-items: center;
+    max-width: 380px;
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
-    padding: 10px 20px; /* كبرنا المسافة شوية هنا */
-    width: 350px; /* عرضناه سنة عشان يبقى أشيك */
+    padding: 9px 14px;
+    width: 100%;
 }
 
 .search-bar input {
@@ -116,8 +132,35 @@ a{
     border: none;
     color: var(--text-primary);
     outline: none;
-    margin-left: 12px; /* كبرنا المسافة بين الأيقونة والكلام */
+    margin-left: 10px;
     width: 100%;
+}
+
+.tool-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.tool-icon {
+    display: grid;
+    width: 24px;
+    height: 24px;
+    place-items: center;
+    border-radius: 6px;
+    background: rgba(255, 61, 104, 0.12);
+    color: var(--primary-color);
+    font-size: 0.72rem;
+}
+
+.tool-badge {
+    padding: 2px 5px;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    color: var(--text-secondary);
+    font-size: 0.45rem;
+    letter-spacing: 0.04em;
 }
 
 .nav-actions{
@@ -138,9 +181,12 @@ a{
     font-size: 1.2rem;
     /* شكل الماوس يبقى يد علشان يوضح إن الزر قابل للضغط */
     cursor: pointer;
+    padding: 6px;
 }
 
 .profile-btn{
+    width: 32px;
+    height: 32px;
     background-color: var(--primary-color);
     color: white;
     border:none;
@@ -154,12 +200,17 @@ a{
     /* تدوير زوايا الزر؛ المتغير بيخلي نفس القيمة موحدة في المشروع */
     border-radius: var(--border-radius);
     /* مساحة داخلية للزر: 8 فوق/تحت و20 يمين/شمال */
-    padding: 8px 20px;
+    padding: 9px 16px;
     cursor: pointer;
     /* bold بيخلي كلام الزر أوضح */
     font-weight: bold;
     /* بينعم تغيير لون الخلفية */
     transition: background-color 0.3s ease;
+}
+
+.tool-card .view-btn {
+    width: 100%;
+    margin-top: auto;
 }
 .view-btn:hover{
     background-color: var(--primary-hover);
@@ -190,7 +241,8 @@ a{
     padding: var(--spacing-lg);
     color: var(--text-secondary);
     font-size: 0.9rem;
-    margin-top: 100px;
+    margin-top: 20px;
+    border-top: 1px solid var(--border-color);
 }
 
 .stat-number {

@@ -1,35 +1,29 @@
-:root{
-    /* الألوان الأساسية للثيم الدارك (Dark Mode) */
-    --bg-main: #111c36;      /* لون الخلفية الأساسي الغامق جداً */
-    --bg-sidebar: #111827;   /* لون القائمة الجانبية والكروت */
-    --bg-card: #1F2937;      /* لون الكروت الداخلية */
-    
-    /* ألوان مميزة (Primary & Accent) */
-    --primary-color: #F43F5E; /* اللون البينك/الأحمر بتاع الزراير واللوجو */
-    --primary-hover: #E11D48; /* لون الزرار لما تقف عليه بالماوس */
-    
-    /* ألوان النصوص */
-    --text-primary: #F3F4F6; /* لون الخط الأساسي (أبيض) */
-    --text-secondary: #9CA3AF; /* لون الخط الثانوي (رمادي فاتح) */
-    
-    /* ألوان الإحصائيات (Semantic Colors) */
-    --color-blue: #3B82F6;
-    --color-pink: #EC4899;
-    --color-green: #10B981;
-    --color-yellow: #F59E0B;
-    
-    /* المسافات والحدود والتأثيرات */
-    --border-color: #374151; /* لون الخطوط الفاصلة */
-    --border-radius: 12px;   /* دوران حواف الكروت */
+:root {
+    --bg-main: #0d1629;
+    --bg-sidebar: #0b1324;
+    --bg-surface: #101b31;
+    --bg-card: #121e35;
+    --bg-card-hover: #17243d;
+    --primary-color: #ff3d68;
+    --primary-hover: #e8325a;
+    --text-primary: #f4f7ff;
+    --text-secondary: #8995af;
+    --border-color: #263451;
+    --border-soft: rgba(255, 255, 255, 0.08);
+    --color-blue: #4c8dff;
+    --color-pink: #ef4f9a;
+    --color-green: #24c995;
+    --color-yellow: #f0b429;
+    --border-radius: 8px;
     --spacing-sm: 8px;
     --spacing-md: 16px;
     --spacing-lg: 24px;
-    
-    /* الخطوط */
     --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -41,3 +35,13 @@ body{
     background-color: var(--bg-main);
     color:var(--text-primary);
 }
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+

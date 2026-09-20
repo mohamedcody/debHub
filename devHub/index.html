@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="ltr">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,23 +9,19 @@
 </head>
 <body>
 
-    <!-- الحاوية الرئيسية اللي هتلم الصفحة كلها -->
     <div class="app-container">
-
-        <!-- القائمة الجانبية (بقت هي أول حاجة على الشمال) -->
         <aside class="sidebar">
-            <div class="logo">
+            <header class="logo">
                 <h1>DevHub 🚀</h1>
-            </div>
+            </header>
 
             <h3 class="sidebar-title">القائمة</h3>
 
             <nav class="sidebar-nav">
-
                 <ul>
-                    <li class="active"><a href="#"><span>📊</span> Dashboard</a></li>
+                    <li class="active"><a href="#"><span aria-hidden="true">📊</span> Dashboard</a></li>
                     <li class="nav-group">
-                        <button type="button" class="nav-toggle" id="tools-btn"><span>🛠️</span> Tools</button>
+                        <button type="button" class="nav-toggle" id="tools-btn" aria-expanded="false"><span aria-hidden="true">🛠️</span> Tools</button>
                         <ul class="sub-menu" id="sub-menu">
                             <li><a href="#">JSON Formatter</a></li>
                             <li><a href="#">Base64</a></li>
@@ -34,26 +30,23 @@
                             <li><a href="#">Timestamp</a></li>
                         </ul>
                     </li>
-                    <li><a href="#"><span>📖</span> Resources</a></li>
-                    <li><a href="#"><span>📝</span> Notes</a></li>
-                    <li><a href="#"><span>✅</span> Tasks</a></li>
-                    <li><a href="#"><span>⭐</span> Favorites</a></li>
-                    <li><a href="#"><span>⚙️</span> Settings</a></li>
+                    <li><a href="#"><span aria-hidden="true">📖</span> Resources</a></li>
+                    <li><a href="#"><span aria-hidden="true">📝</span> Notes</a></li>
+                    <li><a href="#"><span aria-hidden="true">✅</span> Tasks</a></li>
+                    <li><a href="#"><span aria-hidden="true">⭐</span> Favorites</a></li>
+                    <li><a href="#"><span aria-hidden="true">⚙️</span> Settings</a></li>
                 </ul>
             </nav>
         </aside>
 
-        <!-- حاوية بتلم الجزء اليمين كله (الشريط العلوي + المحتوى + الفوتر) -->
         <div class="main-wrapper">
-            
-            <!-- الشريط العلوي -->
             <header class="top-navbar">
-               <div class="search-bar">
-                    <span>🔍</span>
+                <label class="search-bar">
+                    <span aria-hidden="true">🔍</span>
                     <input type="search" aria-label="Search tools and notes" placeholder="Search tools, notes...">
-                </div>
-                
-                <div class="nav-actions">
+                </label>
+
+                <div class="nav-actions" aria-label="Quick actions">
                     <button type="button" class="icon-btn" aria-label="Notifications">🔔</button>
                     <button type="button" class="icon-btn" aria-label="Help">❓</button>
                     <button type="button" class="icon-btn" aria-label="Dark Mode">🌙</button>
@@ -61,10 +54,7 @@
                 </div>
             </header>
 
-            <!-- المحتوى الأساسي -->
             <main class="main-content">
-               
-                <!-- قسم الترحيب الجديد -->
                 <section class="welcome-section">
                     <div class="welcome-text">
                      <h2>Welcome to DevHub 👋</h2>
@@ -95,7 +85,6 @@
                     </div>
                 </section>
 
-                <!-- تم تصحيح كلمة section هنا -->
                 <section class="tools-section">
                     <div class="section-header">
                         <h2>أدوات المطورين</h2>
@@ -103,37 +92,70 @@
                     </div>
                     <div class="tools-grid">
                         <div class="tool-card">
+                                                        <div class="tool-card-top"><span class="tool-icon" aria-hidden="true">&lt;/&gt;</span><span class="tool-badge">FORMATTER</span></div>
                             <h3>JSON Formatter</h3>
-                              <p>تنسيق وتحقق من صحة الـ JSON</p>
+                                                        <p>تنسيق وتحقق من صحة الـ JSON</p>
                             <button type="button" class="view-btn">View Tool</button>
                         </div>
                         <div class="tool-card">
+                                                        <div class="tool-card-top"><span class="tool-icon" aria-hidden="true">🔒</span><span class="tool-badge">SECURITY</span></div>
                             <h3>Base64 Encoder</h3>
                             <p>تحويل النصوص إلى Base64</p>
                             <button type="button" class="view-btn">View Tool</button>
                         </div>
                         <div class="tool-card">
+                            <div class="tool-card-top"><span class="tool-icon" aria-hidden="true">♙</span><span class="tool-badge">UTILITY</span></div>
                             <h3>UUID Generator</h3>
                             <p>إنشاء UUIDs فريدة</p>
                             <button type="button" class="view-btn">View Tool</button>
                         </div>
                         <div class="tool-card">
+                            <div class="tool-card-top"><span class="tool-icon" aria-hidden="true">🎨</span><span class="tool-badge">DESIGN</span></div>
                             <h3>QR Code Generator</h3>
                             <p>إنشاء رموز QR</p>
                             <button type="button" class="view-btn">View Tool</button>
                         </div>
                         <div class="tool-card">
+                                     <div class="tool-card-top"><span class="tool-icon" aria-hidden="true">◷</span><span class="tool-badge">TIME</span></div>
                            <h3>Timestamp</h3>
-                        <p>تحويل الوقت بين Unix ووقت مقروء</p>
+                                     <p>تحويل الوقت بين Unix ووقت مقروء</p>
                             <button type="button" class="view-btn">View Tool</button>
                         </div>
                         <div class="tool-card">
+                            <div class="tool-card-top"><span class="tool-icon" aria-hidden="true">ϟ</span><span class="tool-badge">SECURITY</span></div>
                             <h3>JWT Debugger</h3>
                             <p>فحص وتصحيح JWTs</p>
                             <button type="button" class="view-btn">View Tool</button>
                         </div>
                     </div>
                 </section>
+
+                <div class="updates-layout">
+                    <section class="updates-section">
+                        <div class="section-header">
+                            <h2>Platform Updates</h2>
+                            <p>Latest updates and improvements to the DevHub platform</p>
+                        </div>
+                        <div class="updates-grid">
+                            <div class="tool-card"><h3>New "Color Converter" tool added</h3><p>2 hours ago</p></div>
+                            <div class="tool-card"><h3>Improved performance for JSON formatter</h3><p>5 hours ago</p></div>
+                            <div class="tool-card"><h3>Fixed copy-to-clipboard functionality</h3><p>Yesterday</p></div>
+                        </div>
+                    </section>
+
+                    <aside class="quick-links" aria-labelledby="quick-links-title">
+                        <h2 id="quick-links-title">Quick Links</h2>
+                        <ul>
+                            <li><a href="#">▣ Documentation</a></li>
+                            <li><a href="#">♧ Community Forum</a></li>
+                            <li><a href="#">&lt;/&gt; API Reference</a></li>
+                            <li><a href="#">☆ Submit Feedback</a></li>
+                        </ul>
+                    </aside>
+                </div>
+            
+
+
 
             </main>
 
